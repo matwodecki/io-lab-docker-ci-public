@@ -42,13 +42,12 @@ image:
 		--tag matwodecki/io-lab-docker-ci:latest .
 	
   # TODO: last part of this command that tags just built image with a specyfic tag
-	docker tag matwodecki/io-lab-docker-ci:latest matwodecki/io-lab-docker-ci:latest
-	docker tag matwodecki/io-lab-docker-ci:latest matwodecki/io-lab-docker-ci:ca2de2a
+	docker tag matwodecki/io-lab-docker-ci:latest matwodecki/io-lab-docker-ci:$(TAG)
 
 push: image
     
 	docker push matwodecki/io-lab-docker-ci:latest
-	docker push matwodecki/io-lab-docker-ci:ca2de2a
+	docker push matwodecki/io-lab-docker-ci:$(TAG)
     
 clean:
 
