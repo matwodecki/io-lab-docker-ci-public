@@ -44,10 +44,11 @@ image:
   # TODO: last part of this command that tags just built image with a specyfic tag
 
 push: image
+    
 	docker push matwodecki/io-lab-docker-ci:latest
-#    docker tag io-lab-docker-ci:latest matwodecki/io-lab-docker-ci:ca2de2a
-#    docker push matwodecki/io-lab-docker-ci:ca2de2a
-
+	docker tag io-lab-docker-ci:latest matwodecki/io-lab-docker-ci:ca2de2a
+	docker push matwodecki/io-lab-docker-ci:ca2de2a
+    
 clean:
 
 .PHONY: clean image push all
