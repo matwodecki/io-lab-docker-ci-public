@@ -39,14 +39,15 @@ image:
 		--build-arg SCHEMA_BUILD_DATE="$(SCHEMA_BUILD_DATE)" \
 		--build-arg SCHEMA_BUILD_VERSION="$(SCHEMA_BUILD_VERSION)" \
 		--build-arg SCHEMA_CMD="$(SCHEMA_CMD)" \
-		--tag io-lab-docker-ci:latest .
+		--tag matwodecki/io-lab-docker-ci:latest .
 	
   # TODO: last part of this command that tags just built image with a specyfic tag
+	docker tag matwodecki/io-lab-docker-ci:latest matwodecki/io-lab-docker-ci:latest
+	docker tag matwodecki/io-lab-docker-ci:latest matwodecki/io-lab-docker-ci:ca2de2a
 
 push: image
     
 	docker push matwodecki/io-lab-docker-ci:latest
-	docker tag io-lab-docker-ci:latest matwodecki/io-lab-docker-ci:ca2de2a
 	docker push matwodecki/io-lab-docker-ci:ca2de2a
     
 clean:
